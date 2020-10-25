@@ -1,0 +1,20 @@
+<table>
+<tr>
+<td id="mainmenu">
+	<{counter start=0 print=false}>
+      <{foreach item=block from=$block.mymedias}>
+	<{if $block.link}>
+	<{counter print=false assign=count}>
+        	<{if $count == 1}>
+          	<a class="menuTop" href="<{$block.link}>"><{$block.subject}></a>
+      	<{else}>
+          	<a class="menuMain" href="<{$block.link}>"><{$block.subject}></a>
+        <{/if}>
+<{else}>
+        <{$block.subject}>
+<{/if}>
+<{/foreach}>
+</td>
+</tr>
+</table>
+

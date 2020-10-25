@@ -1,0 +1,7 @@
+<{if $block.format == "pic"}>
+<{include file="db:mymedia_image_block.html"}>
+<{elseif $block.format == "menu"}>
+<{include file="db:mymedia_menu_block.html"}>
+<{else}>
+<{include file="db:mymedia_list_block.html"}>
+<{/if}>

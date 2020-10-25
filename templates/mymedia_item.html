@@ -1,0 +1,58 @@
+<{if $banner}><div align="center"><{$banner}></div><br><{/if}>
+<{if $navlink}><div align="left"><{$navlink}></div><{/if}>
+<{if $myMedianav}><div align="left">Page <{$myMedianav}></div><{/if}>
+<div class="item">
+<{if $infos.notitle}><div class="itemHead"><{$infos.subject}></div>
+	<{if $infos.infos}><div class="itemInfo"><{$infos.infos}></div><{/if}>
+<{/if}>
+<{if $infos.displaylogo}><br><{$infos.logo}><{/if}>
+<{if $infos.media}><div align="center"><{$infos.media}></div><{/if}>
+
+<div class="itemText"><br><{$infos.texte}><br></div>
+
+<{if $myMedianav}><div class="itemPermaLink" align="center"><{$page}><{$myMedianav}></div><{/if}>
+
+<{if $navlink AND $navlink_type == 'path'}><hr>
+<a href="index.php"><{$index}></a>
+<{foreach item=liste from=$liste}>
+&nbsp;|&nbsp;<{$liste.link}>
+<{/foreach}><br>
+<{/if}>
+
+<{if $infos.adminlink}><div class="itemFoot"><{$infos.adminlink}></div><{else}><hr><{/if}>
+<{if $navlink AND $navlink_type == 'list'}><div class="itemPermaLink"><b><{$list}> :</b></div>
+<table cellpadding="2" cellspacing="2" border="0">
+<tr>
+<td>
+<ul>
+<li><a href="index.php"><{$index}></a></li>
+<{foreach item=liste from=$liste}>
+<li><{$liste.link}><{$liste.tag}></li>
+<{if $liste.numrows}>
+</td>
+<td>
+<{/if}>
+<{/foreach}>
+</td>
+</tr>
+</table>
+</div>
+<{/if}>
+<{if $infos.cancomment}>
+	<table border="0" width="100%" cellspacing="1" cellpadding="0" align="center" >
+   	<tr> 
+	    <td colspan="3" align ="left"> 
+      	<div style="text-align: center; padding: 3px; margin:3px;"> <{$commentsnav}> <{$lang_notice}></div>
+      	<div style="margin:3px; padding: 3px;"> 
+	        <!-- start comments loop -->
+        	<{if $comment_mode == "flat"}> <{include file="db:system_comments_flat.html"}> 
+        	<{elseif $comment_mode == "thread"}> <{include file="db:system_comments_thread.html"}> 
+        	<{elseif $comment_mode == "nest"}> <{include file="db:system_comments_nest.html"}> 
+        	<{/if}> 
+        	<!-- end comments loop -->
+      	</div>
+    	</td>
+  	</tr>
+	</table>
+<{/if}>
+<div style="display: none;">myMedia is developed by The WolFactory (http://www.wolfpackclan.com/wolfactory), a Xoops division of the Wolf Pack Clan (http://www.wolfpackclan.com)</div>

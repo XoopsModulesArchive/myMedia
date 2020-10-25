@@ -1,0 +1,40 @@
+<div class="item">
+<{if $banner}><div align="center"><{$banner}><br></div><{/if}>
+<table cellpadding="2" cellspacing="2" border="0">
+<tr>
+	<td colspan="<{$columns}>">
+<div class="itemHead"><{$module_name}></div>
+<div class="itemText"><{$textindex}></div>
+	</td>
+</tr>
+<tr>
+<{foreach item=info from=$infos}>
+	<td width="<{$width}>%" align="center">
+		<{$info.link}>
+		<{if $info.logo}>
+		<img src="<{$info.logo}>" alt="<{$info.subject}>" <{$info.logo_width}>><br>							<{/if}>
+		<{$info.subject}></a><{$info.tag}>
+	</td>
+<{if $info.numrows is div by $columns}>
+</tr>
+<tr>
+<{/if}>
+<{/foreach}>
+</tr>
+
+<tr>
+<td colspan="<{$columns}>">
+<{$myMedianav}>
+</td>
+</tr>
+
+<{if $info.adminlink}>
+<tr>
+	<td colspan="<{$columns}>">
+	<div class="itemFoot"><{$info.adminlink}></div>
+	</td>
+</tr>
+<{/if}>
+</table>
+</div>
+<div style="display: none;">myMedia is developed by The WolFactory (http://www.wolfpackclan.com/wolfactory), a Xoops division of the Wolf Pack Clan (http://www.wolfpackclan.com)</div>

@@ -1,0 +1,24 @@
+<table>
+<tr align="center">
+	<{counter print=false assign=count}>
+	<{foreach item=block from=$block.mymedias}>
+	<td>
+	<{if $block.artimage == "blank.gif"}>
+          		<a href="<{$block.link}>">
+			<{$block.subject}>
+			</a><p>
+        	<{else}>
+          		<a href="<{$block.link}>">
+			<img src="<{$block.artimage}>" width="<{$block.artimage_size}>" alt="<{$block.subject}>"><br>
+			<{$block.subject}>
+			</a><p>
+        	<{/if}>
+	</td>
+	<{counter print=false assign=count}>
+	<{if $count is div by $block.columns}>
+</tr>
+<tr align="center">
+	<{/if}>
+      <{/foreach}>
+</tr>
+</table>

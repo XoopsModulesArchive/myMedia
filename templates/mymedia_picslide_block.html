@@ -1,0 +1,22 @@
+<script src="<{$xoops_url}>/modules/myMedia/script/dw_core.js" type="text/javascript"></script>
+<script src="<{$xoops_url}>/modules/myMedia/script/dw_scroller.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+		<!--
+		function initScrollerObjs() {
+ 		scroller1 = new scrollerObj(0,0,<{$block.block_size}>,<{$block.marquee_height}>,"center","holder");
+
+      <{foreach item=imenu from=$block.mymedias}>
+		scroller1.addItem('<{$imenu.link}><{$imenu.image}><br><{$imenu.title}><{if $imenu.link}></a><{/if}>');
+ 	<{/foreach}>
+ 		scroller1.create();
+
+  		setMouseEvents();
+		}
+
+		window.onload = initScrollerObjs;
+		//-->
+		</script>
+<div style="height: <{$block.marquee_height}>px; width: <{$block.block_size}>px;">
+<div id="holder"></div>
+</div>
